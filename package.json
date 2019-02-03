@@ -1,0 +1,45 @@
+{
+  "name": "Twitch",
+  "version": "1.0.0",
+  "description": "A minimal twitch viewer",
+  "main": "main.js",
+  "scripts": {
+    "postinstall": "install-app-deps",
+    "start": "npm install && electron ./app",
+    "pack": "build --dir",
+    "dist": "build"
+  },
+  "keywords": [
+    "twitch",
+    "dota"
+  ],
+  "author": "longtong",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^4.0.3",
+    "electron-builder": "^20.38.5"
+  },
+  "dependencies": {
+    "bloom-filter-cpp": "^1.2.0",
+    "hashset-cpp": "^2.1.0"
+  },
+  "build": {
+    "appId": "twitch",
+    "dmg": {
+      "icon": "build/icon.icns",
+      "iconSize": 100,
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
+  }
+}
